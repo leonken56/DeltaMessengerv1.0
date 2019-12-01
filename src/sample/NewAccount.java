@@ -1,6 +1,8 @@
 package sample;
 
+import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
+import com.mongodb.DBCollection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -33,24 +35,38 @@ public class NewAccount implements Initializable {
 
     }
     public void LoadData(){
+
+    }
+    public void Register(ActionEvent event) throws Exception
+    {
         System.out.println("Trying to connect to mongo");
         try {
             MongoClient mongoClient = new MongoClient("localhost",27017);
             DB db = mongoClient.getDB("userdatabase");
+            DBCollection userlist = db.getCollection("userlist");
             System.out.println("Connected to Database");
+            System.out.println("Server is ready");
+
+            //Fetching new user information
+            BasicDBObject user = new BasicDBObject();
+            //Push into database
+            user.put("userid", textfield_userid.getText());
+            if (passwordfield_userpass.getText().equals(passwordfield_userpassconfirm.getText())) {
+                user.put("password", passwordfield_userpass.getText());
+                userlist.insert(user);
+            }
+            else status.setText("Your password is not matches");
 
         }
         catch (Exception e) {
             System.out.println("exception occured");
             System.out.println(e);
         }
-        System.out.println("Server is ready");
-    }
-    public void Register(ActionEvent event) throws Exception
-    {
 
 
-            //if SUCCESS
+
+
+        //if SUCCESS
             //Hide register windows
             ((Node) (event.getSource())).getScene().getWindow().hide();
 

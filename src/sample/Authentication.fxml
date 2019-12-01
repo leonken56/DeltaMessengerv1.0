@@ -11,7 +11,7 @@
             <PasswordField fx:id="userpass" layoutX="168.0" layoutY="89.0" />
             <Label layoutX="83.0" layoutY="49.0" prefHeight="17.0" prefWidth="67.0" text="Username:" />
             <Label layoutX="83.0" layoutY="93.0" prefHeight="17.0" prefWidth="67.0" text="Password:" />
-            <Label fx:id="status" layoutX="290.0" layoutY="127.0" prefHeight="17.0" prefWidth="102.0" />
+            <Label fx:id="status" alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" layoutY="127.0" prefHeight="17.0" prefWidth="400.0" />
          </children>
       </Pane>
    </center>
