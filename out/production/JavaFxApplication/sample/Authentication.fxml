@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Authentication">
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="userid" layoutX="168.0" layoutY="45.0" />
+            <PasswordField fx:id="userpass" layoutX="168.0" layoutY="89.0" />
+            <Label layoutX="83.0" layoutY="49.0" prefHeight="17.0" prefWidth="67.0" text="Username:" />
+            <Label layoutX="83.0" layoutY="93.0" prefHeight="17.0" prefWidth="67.0" text="Password:" />
+            <Label fx:id="status" alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" layoutY="127.0" prefHeight="17.0" prefWidth="400.0" />
+         </children>
+      </Pane>
+   </center>
+   <top>
+      <Label prefHeight="14.0" prefWidth="36.0" text="LOGIN" BorderPane.alignment="CENTER" />
+   </top>
+   <bottom>
+      <HBox alignment="TOP_RIGHT" prefHeight="23.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="button_register" focusTraversable="false" mnemonicParsing="false" onAction="#Register" text="Register" />
+            <Button focusTraversable="false" mnemonicParsing="false" onAction="#Login" text="Log In" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
