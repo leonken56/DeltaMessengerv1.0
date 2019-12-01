@@ -7,13 +7,13 @@
    <center>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <PasswordField fx:id="passwordfield_userpass" layoutX="168.0" layoutY="65.0" />
             <TextField fx:id="textfield_userid" layoutX="168.0" layoutY="21.0" />
+            <PasswordField fx:id="passwordfield_userpass" layoutX="168.0" layoutY="65.0" />
+            <PasswordField fx:id="passwordfield_userpassconfirm" layoutX="168.0" layoutY="108.0" />
             <Label layoutX="101.0" layoutY="25.0" prefHeight="17.0" prefWidth="67.0" text="Username:" />
             <Label layoutX="106.0" layoutY="69.0" prefHeight="17.0" prefWidth="58.0" text="Password:" />
-            <PasswordField fx:id="passwordfield_userpassconfirm" layoutX="168.0" layoutY="108.0" />
             <Label layoutX="61.0" layoutY="112.0" prefHeight="17.0" prefWidth="101.0" text="Confirm Password:" />
-            <Label fx:id="status" layoutX="9.0" layoutY="136.0" prefHeight="17.0" prefWidth="386.0" />
+            <Label fx:id="status" alignment="CENTER" layoutX="9.0" layoutY="136.0" prefHeight="17.0" prefWidth="386.0" />
          </children>
       </Pane>
    </center>

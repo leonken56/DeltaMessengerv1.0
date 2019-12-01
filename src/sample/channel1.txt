@@ -2,32 +2,42 @@ Nova: asdsad
 Nova: 2222
 Nova: asdsadsazz 
 Nova: this is a test txt file.
-<Username>: 
-<Username>: jkkjjk
-<Username>: kjkjjkjk
-<Username>: iouio
-<Username>: asdsa
-<Username>: sw
-<Username>: sdfsdasaz
-<Username>: sdfert
-<Username>: dsfxcvxc
-<Username>: asdfsadfsd
-<Username>: hello
-<Username>: this is nova
-<Username>: assdfasddfas
-<Username>: asdsadaskl
-<Username>: asdasdsadasjh asdjhasjk'
-<Username>: asdkncvasldcasdkl
-<Username>: ewrkjewrlkejw
-<Username>: qisaiasasa
-<Username>: zxczxczxczx
-<Username>: adsdasdas
-<Username>: asdsadsad
-<Username>: sdsdsds
-<Username>: asassasa
-<Username>: asldaslkdasjkl
-<Username>: asdasdsa
-<Username>: sdsds
-<Username>: 
-<Username>: adada
-<Username>: aaaaaa
+Nova: 
+Nova: jkkjjk
+Nova: kjkjjkjk
+Nova: iouio
+Nova: asdsa
+Nova: sw
+Nova: sdfsdasaz
+Nova: sdfert
+Nova: dsfxcvxc
+Nova: asdfsadfsd
+Nova: hello
+Nova: this is nova
+Nova: assdfasddfas
+Nova: asdsadaskl
+Nova: asdasdsadasjh asdjhasjk'
+Nova: asdkncvasldcasdkl
+Nova: ewrkjewrlkejw
+Nova: qisaiasasa
+Nova: zxczxczxczx
+Nova: adsdasdas
+Nova: asdsadsad
+Nova: sdsdsds
+Nova: asassasa
+Nova: asldaslkdasjkl
+Nova: asdasdsa
+Nova: sdsds
+Nova: 
+Nova: adada
+Nova: aaaaaa
+Nova: assdad
+admin: asds
+novarailguns: alo
+admin: hi
+leonken56: what ?
+leonken56: are you guys talking about
+leonken56: this is cool, right ?
+apham: hi
+admin: adada
+admin: hi

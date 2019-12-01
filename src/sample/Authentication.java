@@ -18,7 +18,22 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
+import com.mongodb.ServerAddress;
+import com.mongodb.MongoCredential;
+import com.mongodb.MongoClientOptions;
+
 public class Authentication{
+    private static String display_username;
+
+    public static String getUsername() {
+        return display_username;
+    }
+
+    public static void setUsername(String display_thisusername) {
+        Authentication.display_username = display_thisusername;
+    }
     @FXML
     private Label status;
     @FXML
@@ -49,7 +64,24 @@ public class Authentication{
         // Initialize connection with Database
         System.out.println("Trying to connect to mongo");
         try {
-            MongoClient mongoClient = new MongoClient("localhost", 27017);
+
+//            String user="generalaccess";
+//            String database="userdatabase";
+//            char[] password="123".toCharArray();
+//
+//            MongoCredential credential = MongoCredential.createCredential(user,
+//                    database,
+//                    password);
+//            MongoClient mongoClient = new MongoClient(new ServerAddress("125.025.125.2", 27017),
+//                    Arrays.asList(credential));
+
+            //Online host URL
+            MongoClientURI uri = new MongoClientURI(
+                    "mongodb+srv://userdataaccess:user@cluster0-7hpzc.mongodb.net/test:27017?retryWrites=true&w=majority/userdatabase");
+            //Online host
+            MongoClient mongoClient = new MongoClient(uri);
+            // Localhost
+            // MongoClient mongoClient = new MongoClient("localhost", 27017);
             DB db = mongoClient.getDB("userdatabase");
             DBCollection userlist = db.getCollection("userlist");
             System.out.println("Connected to Database");
@@ -70,7 +102,9 @@ public class Authentication{
             DBCursor found = userlist.find(andQuery);
             if (found.hasNext())
             {
+
                 status.setText("Login Success");
+                setUsername(userid.getText());
                 // hide login windows
                 ((Node) (event.getSource())).getScene().getWindow().hide();
 
@@ -84,8 +118,9 @@ public class Authentication{
             } else status.setText("Invalid Username or password");
         }
         catch (Exception e) {
-        System.out.println("exception occured");
-        System.out.println(e);
+            status.setText("Unable to connect to cloud server");
+            System.out.println("exception occured");
+            System.out.println(e);
     }
     }
     public void Register(ActionEvent event) throws Exception
