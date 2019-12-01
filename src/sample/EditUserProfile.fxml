@@ -20,5 +20,6 @@
             </image></ImageView>
       <Button fx:id="save" layoutX="531.0" layoutY="361.0" mnemonicParsing="false" onAction="#save" text="SAVE" />
       <Button fx:id="reset" layoutX="468.0" layoutY="361.0" mnemonicParsing="false" onAction="#reset" text="RESET" />
+      <Label fx:id="status" alignment="CENTER_RIGHT" layoutX="71.0" layoutY="325.0" prefHeight="17.0" prefWidth="504.0" />
     </children>
 </AnchorPane>

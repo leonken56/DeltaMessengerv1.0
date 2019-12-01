@@ -40,41 +40,11 @@ public class Authentication{
     private TextField userid;
     @FXML
     private TextField userpass;
-/*    public void initialize(URL url, ResourceBundle rb)
-    {
-        LoadData();
-
-    }
-    public void LoadData(){
-        System.out.println("Trying to connect to mongo");
-        try {
-            MongoClient mongoClient = new MongoClient("localhost",27017);
-            DB db = mongoClient.getDB("userdatabase");
-            System.out.println("Connected to Database");
-
-        }
-        catch (Exception e) {
-            System.out.println("exception occured");
-            System.out.println(e);
-        }
-        System.out.println("Server is ready to check for ID");
-    }*/
 
     public void Login(ActionEvent event) throws Exception {
         // Initialize connection with Database
         System.out.println("Trying to connect to mongo");
         try {
-
-//            String user="generalaccess";
-//            String database="userdatabase";
-//            char[] password="123".toCharArray();
-//
-//            MongoCredential credential = MongoCredential.createCredential(user,
-//                    database,
-//                    password);
-//            MongoClient mongoClient = new MongoClient(new ServerAddress("125.025.125.2", 27017),
-//                    Arrays.asList(credential));
-
             //Online host URL
             MongoClientURI uri = new MongoClientURI(
                     "mongodb+srv://userdataaccess:user@cluster0-7hpzc.mongodb.net/test:27017?retryWrites=true&w=majority/userdatabase");

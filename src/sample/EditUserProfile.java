@@ -3,13 +3,11 @@ import com.mongodb.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 public class EditUserProfile implements Initializable {
     @FXML
@@ -21,7 +19,7 @@ public class EditUserProfile implements Initializable {
     @FXML
     private TextField display_email;
     @FXML
-    private Button save;
+    private Label status;
     //Online host URL
     MongoClientURI uri = new MongoClientURI(
             "mongodb+srv://userdataaccess:user@cluster0-7hpzc.mongodb.net/test:27017?retryWrites=true&w=majority");
@@ -80,7 +78,7 @@ public class EditUserProfile implements Initializable {
         userlist.update(query, updateObject);
         updateObject.put("$set", newEMAIL);
         userlist.update(query, updateObject);
-        System.out.println("Saved new profile");
+        status.setText("Profile Saved.");
 
     }
     public void reset(ActionEvent event) throws Exception {
@@ -92,6 +90,7 @@ public class EditUserProfile implements Initializable {
         display_dob.setText((String) cursor.one().get("dob"));
         display_phonenumber.setText((String) cursor.one().get("phonenumber"));
         display_email.setText((String) cursor.one().get("email"));
+        status.setText("Profile Reset.");
     }
 
 }
