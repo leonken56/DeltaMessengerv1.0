@@ -15,8 +15,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
-public class NewAccount implements Initializable {
+/**
+ * <h1>New Account class</h1>
+ * This class is responsible for handling new account creation by inserting new user to userdatabase.
+ * @author  Anh Pham
+ * @version 1.0
+ * @since   2019-12-01
+ */
+public class NewAccount {
     @FXML
     private Label status;
     @FXML
@@ -26,14 +32,14 @@ public class NewAccount implements Initializable {
     @FXML
     private TextField passwordfield_userpassconfirm;
 
-    public void initialize(URL url, ResourceBundle rb)
-    {
-            LoadData();
-
-    }
-    public void LoadData(){
-
-    }
+    /**
+     * This method is used to handle event when the user click on register button.
+     * Create new user account by inserting new user's userid and password to userdatabase.
+     * @param event This is the actionevent name indicate clicking action.
+     * @return Nothing.
+     * @exception Exception on file not found.
+     * @see Exception
+     */
     public void Register(ActionEvent event) throws Exception
     {
         System.out.println("Trying to connect to mongo");

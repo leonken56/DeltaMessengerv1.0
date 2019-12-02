@@ -9,6 +9,13 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+/**
+ * <h1>Edit User Profile class</h1>
+ * Edit User Profile class let user update their user profile information to the database.
+ * @author  Anh Pham
+ * @version 1.0
+ * @since   2019-12-01
+ */
 public class EditUserProfile implements Initializable {
     @FXML
     private TextField display_name;
@@ -30,7 +37,12 @@ public class EditUserProfile implements Initializable {
     DB db = mongoClient.getDB("userdatabase");
     DBCollection userlist = db.getCollection("userlist");
     //System.out.println("Connected to mongodb");
-
+    /**
+     * This method is used to initialize this class with loadData() method.
+     * @param url Unused.
+     * @param rb Unused.
+     * @return Nothing.
+     */
     public void initialize(URL url, ResourceBundle rb) {
         try {
             loadData();
@@ -38,7 +50,10 @@ public class EditUserProfile implements Initializable {
             e.printStackTrace();
         }
     }
-
+    /**
+     * This method is used to load initial user's data, UI elements into the main UI .
+     * @return Nothing.
+     */
     private void loadData() throws IOException {
 
             DBObject query = new BasicDBObject("userid", Authentication.getUsername());
@@ -51,6 +66,14 @@ public class EditUserProfile implements Initializable {
             display_email.setText((String) cursor.one().get("email"));
 
     }
+    /**
+     * This method is used to handle event when the user click on save button.
+     * Save user's new information by updating database.
+     * @param event This is the actionevent name indicate clicking action.
+     * @return Nothing.
+     * @exception Exception on file not found.
+     * @see Exception
+     */
     public void save(ActionEvent event) throws Exception {
 
         //Update user profile:
@@ -81,6 +104,14 @@ public class EditUserProfile implements Initializable {
         status.setText("Profile Saved.");
 
     }
+    /**
+     * This method is used to handle event when the user click on reset button.
+     * Reset the user input to previous state.
+     * @param event This is the actionevent name indicate clicking action.
+     * @return Nothing.
+     * @exception Exception on file not found.
+     * @see Exception
+     */
     public void reset(ActionEvent event) throws Exception {
         DBObject query = new BasicDBObject("userid", Authentication.getUsername());
         DBCursor cursor = userlist.find(query);

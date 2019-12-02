@@ -16,8 +16,21 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 
 
+/**
+ * <h1>Delta Messenger Application!</h1>
+ * Delta Messenger Program implements an application that let users communicate with each other.
+ * @author  Anh Pham
+ * @version 1.0
+ * @publish   2019-12-01
+ */
 public class Main extends Application {
-
+    /**
+     * This is the start method which launches the first FXML windows.
+     * @param primaryStage Load the primary stage.
+     * @exception Exception on file not found.
+     * @see Exception
+     * @return Nothing.
+     */
     @Override
     public void start(Stage primaryStage) throws Exception{
         //sample.CreateUserDatabase.create();
@@ -28,7 +41,11 @@ public class Main extends Application {
 
     }
 
-
+    /**
+     * This is the main method which launches the application.
+     * @param args Unused.
+     * @return Nothing.
+     */
 
     public static void main(String[] args) {
 

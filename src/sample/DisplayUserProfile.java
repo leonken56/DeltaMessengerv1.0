@@ -8,7 +8,13 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
+/**
+ * <h1>Display User Profile class</h1>
+ * This Display User Profile class let user see selected user profile information from online users list.
+ * @author  Anh Pham
+ * @version 1.0
+ * @since   2019-12-01
+ */
 public class DisplayUserProfile implements Initializable {
     @FXML
     TextField display_name;
@@ -18,7 +24,12 @@ public class DisplayUserProfile implements Initializable {
     TextField display_phonenumber;
     @FXML
     TextField display_email;
-
+    /**
+     * This method is used to initialize this class with loadData() method.
+     * @param url Unused.
+     * @param rb Unused.
+     * @return Nothing.
+     */
     public void initialize(URL url, ResourceBundle rb) {
         try {
             loadData();
@@ -26,7 +37,12 @@ public class DisplayUserProfile implements Initializable {
             e.printStackTrace();
         }
     }
-
+    /**
+     * This method is used to initialize connection with cloud mongoDB, load selected user's data and information to the GUI.
+     * @return Nothing.
+     * @exception IOException on input/output error.
+     * @see IOException
+     */
     private void loadData() throws IOException {
         //System.out.println("Trying to connect to mongo");
         try {

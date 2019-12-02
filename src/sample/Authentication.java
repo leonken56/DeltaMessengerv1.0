@@ -4,26 +4,26 @@ import com.mongodb.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import org.bson.Document;
-
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
-
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
-import com.mongodb.ServerAddress;
-import com.mongodb.MongoCredential;
-import com.mongodb.MongoClientOptions;
-
+/**
+ * <h1>Authentication class</h1>
+ * This Authentication class add a layer of security into this application
+ * <p>
+ * <b>Note:</b> User must register a valid account with the database in order to log into the main application.
+ *
+ * @author  Anh Pham
+ * @version 1.0
+ * @since   2019-12-01
+ */
 public class Authentication{
     private static String display_username;
 
@@ -40,7 +40,14 @@ public class Authentication{
     private TextField userid;
     @FXML
     private TextField userpass;
-
+    /**
+     * This method is used to handle event when the user click on login button.
+     * @param event This is the actionevent name indicate clicking action.
+     * @return Nothing.
+     * @exception Exception on file not found.
+     * @see Exception
+     * @return Nothing.
+     */
     public void Login(ActionEvent event) throws Exception {
         // Initialize connection with Database
         System.out.println("Trying to connect to mongo");
@@ -93,6 +100,14 @@ public class Authentication{
             System.out.println(e);
     }
     }
+    /**
+     * This method is used to handle event when the user click on Register button.
+     * @param event This is the actionevent name indicate clicking action.
+     * @return Nothing.
+     * @exception Exception on file not found.
+     * @see Exception
+     * @return Nothing.
+     */
     public void Register(ActionEvent event) throws Exception
     {
             // hide login windows

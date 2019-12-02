@@ -22,7 +22,13 @@ import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
-
+/**
+ * <h1>Client View Controller class</h1>
+ * This Client View Controller class controls all the elements of the main UI.
+ * @author  Anh Pham
+ * @version 1.0
+ * @since   2019-12-01
+ */
 public class Controller implements Initializable{
     ObservableList list= FXCollections.observableArrayList();
     @FXML
@@ -60,6 +66,17 @@ public class Controller implements Initializable{
     public static String getThisUserPhonenumber() {
         return thisUserPhonenumber;
     }
+
+    /**
+     * This method is used to indicate the user about the Current User who using the application with their basic information .
+     * @param thisuserid This get the user id.
+     * @param thisusername This get the user name.
+     * @param thisuserdob This get the user date of birth.
+     * @param thisuseremail This get the user email.
+     * @param thisuserphone This get the user phone number.
+     * @return Nothing.
+     */
+
     public static void setCurrentUser(String thisuserid, String thisusername, String thisuserdob, String thisuseremail, String thisuserphone)
     {
         Controller.thisUserid= thisuserid;
@@ -69,7 +86,12 @@ public class Controller implements Initializable{
         Controller.thisUserPhonenumber=thisuserphone;
     }
 
-
+    /**
+     * This method is used to initialize this class with loadData() method.
+     * @param url Unused.
+     * @param rb Unused.
+     * @return Nothing.
+     */
     public void initialize(URL url, ResourceBundle rb)
     {
         try{
@@ -79,7 +101,10 @@ public class Controller implements Initializable{
             e.printStackTrace();
         }
     }
-
+    /**
+     * This method is used to load initial data, UI elements into the main UI .
+     * @return Nothing.
+     */
     private void loadData() throws IOException{
 
         list.clear();
@@ -132,23 +157,23 @@ public class Controller implements Initializable{
                 String selectedItem = listView.getSelectionModel().getSelectedItem();
                 int index = listView.getSelectionModel().getSelectedIndex();
                 textarea_outputmessage.clear();
-                String filepath = "C:\\Users\\NovA\\IdeaProjects\\HelloFX\\src\\sample\\channel1.txt";
-                if (selectedItem == "Announcement")
-                    filepath = "C:\\Users\\NovA\\IdeaProjects\\HelloFX\\src\\sample\\channel1.txt";
+                URL url = getClass().getResource("Channel1.txt");
+                if (selectedItem =="Announcement")
+                    url = getClass().getResource("Channel1.txt");
                 else if (selectedItem == "GroupCollab")
-                    filepath = "C:\\Users\\NovA\\IdeaProjects\\HelloFX\\src\\sample\\channel2.txt";
+                    url = getClass().getResource("Channel2.txt");
                 else if (selectedItem == "ComputerScience")
-                    filepath = "C:\\Users\\NovA\\IdeaProjects\\HelloFX\\src\\sample\\channel3.txt";
+                    url = getClass().getResource("Channel3.txt");
                 else if (selectedItem == "Homework")
-                    filepath = "C:\\Users\\NovA\\IdeaProjects\\HelloFX\\src\\sample\\channel4.txt";
+                    url = getClass().getResource("Channel4.txt");
                 else if (selectedItem == "Gaming")
-                    filepath = "C:\\Users\\NovA\\IdeaProjects\\HelloFX\\src\\sample\\channel5.txt";
+                    url = getClass().getResource("Channel5.txt");
                 else if (selectedItem == "Sport")
-                    filepath = "C:\\Users\\NovA\\IdeaProjects\\HelloFX\\src\\sample\\channel6.txt";
+                    url = getClass().getResource("Channel6.txt");
                 else if (selectedItem == "Funnymeme")
-                    filepath = "C:\\Users\\NovA\\IdeaProjects\\HelloFX\\src\\sample\\channel7.txt";
+                    url = getClass().getResource("Channel7.txt");
 
-                Scanner input = new Scanner(new File(filepath));
+                Scanner input = new Scanner(new File(url.getPath()));
                 while (input.hasNextLine()) {
                     String buffertext = input.nextLine();
                     textarea_outputmessage.appendText(buffertext + "\n");
@@ -171,22 +196,24 @@ public class Controller implements Initializable{
             {
                 try {
                     String selectedItem = listView.getSelectionModel().getSelectedItem();
-                    String filepath="C:\\Users\\NovA\\IdeaProjects\\HelloFX\\src\\sample\\channel1.txt";
+                    URL url = getClass().getResource("Channel1.txt");
                     if (selectedItem =="Announcement")
-                        filepath="C:\\Users\\NovA\\IdeaProjects\\HelloFX\\src\\sample\\channel1.txt";
+                        url = getClass().getResource("Channel1.txt");
                     else if (selectedItem == "GroupCollab")
-                        filepath="C:\\Users\\NovA\\IdeaProjects\\HelloFX\\src\\sample\\channel2.txt";
+                        url = getClass().getResource("Channel2.txt");
                     else if (selectedItem == "ComputerScience")
-                        filepath="C:\\Users\\NovA\\IdeaProjects\\HelloFX\\src\\sample\\channel3.txt";
+                        url = getClass().getResource("Channel3.txt");
                     else if (selectedItem == "Homework")
-                        filepath="C:\\Users\\NovA\\IdeaProjects\\HelloFX\\src\\sample\\channel4.txt";
+                        url = getClass().getResource("Channel4.txt");
                     else if (selectedItem == "Gaming")
-                        filepath="C:\\Users\\NovA\\IdeaProjects\\HelloFX\\src\\sample\\channel5.txt";
+                        url = getClass().getResource("Channel5.txt");
                     else if (selectedItem == "Sport")
-                        filepath="C:\\Users\\NovA\\IdeaProjects\\HelloFX\\src\\sample\\channel6.txt";
+                        url = getClass().getResource("Channel6.txt");
                     else if (selectedItem == "Funnymeme")
-                        filepath="C:\\Users\\NovA\\IdeaProjects\\HelloFX\\src\\sample\\channel7.txt";
-                    File file = new File(filepath);
+                        url = getClass().getResource("Channel7.txt");
+
+                    Scanner input = new Scanner(new File(url.getPath()));
+                    File file = new File(url.getPath());
                     FileWriter fr = new FileWriter(file, true);
                     BufferedWriter br = new BufferedWriter(fr);
                     if (textfield_usermessage.getText()!="")
@@ -206,8 +233,14 @@ public class Controller implements Initializable{
         };
         textfield_usermessage.setOnAction(event);
     }
-
-    public void OpenEditUserProfile(Event evt) throws FileNotFoundException {
+    /**
+     * This method is used to handle event when the user click on menu > user profile.
+     * @param evt This is the actionevent name indicate clicking action.
+     * @return Nothing.
+     * @exception Exception on file not found.
+     * @see Exception
+     */
+    public void OpenEditUserProfile(Event evt) throws Exception {
         try {
             //setup new stage for editing user profile
             Stage secondaryStage = new Stage();
@@ -224,7 +257,13 @@ public class Controller implements Initializable{
             io2.printStackTrace();
         }
     }
-
+    /**
+     * This method is used to handle event when the user click on menu > LogOut.
+     * @param evt This is the actionevent name indicate clicking action.
+     * @return Nothing.
+     * @exception Exception on file not found.
+     * @see Exception
+     */
     public void LogOut(ActionEvent evt) throws Exception {
         try {
 
@@ -246,26 +285,34 @@ public class Controller implements Initializable{
             io2.printStackTrace();
         }
     }
-
+    /**
+     * This method is used to handle event when the user click on send message.
+     * @param evt This is the actionevent name indicate clicking action.
+     * @return Nothing.
+     * @exception IOException on file writer/reader.
+     * @see IOException
+     */
     public void button_sendMessage(Event evt) throws IOException
     {
         String selectedItem = listView.getSelectionModel().getSelectedItem();
-        String filepath="C:\\Users\\NovA\\IdeaProjects\\HelloFX\\src\\sample\\channel1.txt";
+        URL url = getClass().getResource("Channel1.txt");
         if (selectedItem =="Announcement")
-            filepath="C:\\Users\\NovA\\IdeaProjects\\HelloFX\\src\\sample\\channel1.txt";
+            url = getClass().getResource("Channel1.txt");
         else if (selectedItem == "GroupCollab")
-            filepath="C:\\Users\\NovA\\IdeaProjects\\HelloFX\\src\\sample\\channel2.txt";
+            url = getClass().getResource("Channel2.txt");
         else if (selectedItem == "ComputerScience")
-            filepath="C:\\Users\\NovA\\IdeaProjects\\HelloFX\\src\\sample\\channel3.txt";
+            url = getClass().getResource("Channel3.txt");
         else if (selectedItem == "Homework")
-            filepath="C:\\Users\\NovA\\IdeaProjects\\HelloFX\\src\\sample\\channel4.txt";
+            url = getClass().getResource("Channel4.txt");
         else if (selectedItem == "Gaming")
-            filepath="C:\\Users\\NovA\\IdeaProjects\\HelloFX\\src\\sample\\channel5.txt";
+            url = getClass().getResource("Channel5.txt");
         else if (selectedItem == "Sport")
-            filepath="C:\\Users\\NovA\\IdeaProjects\\HelloFX\\src\\sample\\channel6.txt";
+            url = getClass().getResource("Channel6.txt");
         else if (selectedItem == "Funnymeme")
-            filepath="C:\\Users\\NovA\\IdeaProjects\\HelloFX\\src\\sample\\channel7.txt";
-        File file = new File(filepath);
+            url = getClass().getResource("Channel7.txt");
+
+        Scanner input = new Scanner(new File(url.getPath()));
+        File file = new File(url.getPath());
         FileWriter fr = new FileWriter(file, true);
         BufferedWriter br = new BufferedWriter(fr);
         if (textfield_usermessage.getText()!="")
