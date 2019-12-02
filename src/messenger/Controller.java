@@ -1,4 +1,4 @@
-package sample;
+package messenger;
 
 import java.io.*;
 import java.net.URL;

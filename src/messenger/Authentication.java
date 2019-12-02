@@ -1,4 +1,4 @@
-package sample;
+package messenger;
 
 import com.mongodb.*;
 import javafx.event.ActionEvent;

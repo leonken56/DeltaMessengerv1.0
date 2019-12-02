@@ -4,7 +4,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="420.0" prefWidth="622.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.EditUserProfile">
+<AnchorPane prefHeight="420.0" prefWidth="622.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="messenger.EditUserProfile">
     <children>
         <Label layoutX="331.0" layoutY="93.0" prefHeight="17.0" prefWidth="72.0" text="Name" />
         <TextField fx:id="display_name" layoutX="331.0" layoutY="110.0" prefHeight="25.0" prefWidth="200.0" />
