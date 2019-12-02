@@ -164,6 +164,7 @@ public class Controller implements Initializable{
                 while (input.hasNextLine()) {
                     String buffertext = input.nextLine();
                     textarea_outputmessage.appendText(buffertext + "\n");
+
                 }
                 //Debug show status:
 //                String message = "Changed channel successfully";

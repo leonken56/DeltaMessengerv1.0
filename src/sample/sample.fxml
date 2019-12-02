@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <BorderPane prefHeight="550.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <top>
@@ -48,7 +49,10 @@
    <center>
       <BorderPane prefHeight="500.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <center>
-            <TextArea fx:id="textarea_outputmessage" editable="false" prefHeight="600.0" prefWidth="600.0" text="Thanks you for using Delta Messenger. You can now choose a channel on the left and begin to chat." wrapText="true" BorderPane.alignment="CENTER" />
+            <TextArea fx:id="textarea_outputmessage" editable="false" prefHeight="600.0" prefWidth="600.0" promptText="Thanks you for using Delta Messenger. You can now choose a channel on the left and begin to chat." wrapText="true" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font></TextArea>
          </center>
          <bottom>
             <Pane prefHeight="26.0" prefWidth="600.0" BorderPane.alignment="CENTER">

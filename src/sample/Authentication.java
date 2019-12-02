@@ -16,7 +16,7 @@ import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 /**
  * <h1>Authentication class</h1>
- * This Authentication class add a layer of security into this application
+ * This Authentication class add a layer of security into this application let user create new account and logging in the main UI.
  * <p>
  * <b>Note:</b> User must register a valid account with the database in order to log into the main application.
  *
