@@ -28,7 +28,7 @@ public class DisplayUserProfile implements Initializable {
      * This method is used to initialize this class with loadData() method.
      * @param url Unused.
      * @param rb Unused.
-     * @return Nothing.
+     
      */
     public void initialize(URL url, ResourceBundle rb) {
         try {
@@ -39,7 +39,6 @@ public class DisplayUserProfile implements Initializable {
     }
     /**
      * This method is used to initialize connection with cloud mongoDB, load selected user's data and information to the GUI.
-     * @return Nothing.
      * @exception IOException on input/output error.
      * @see IOException
      */

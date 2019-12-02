@@ -26,11 +26,9 @@ import com.mongodb.MongoClientURI;
  */
 public class Authentication{
     private static String display_username;
-
     public static String getUsername() {
         return display_username;
     }
-
     public static void setUsername(String display_thisusername) {
         Authentication.display_username = display_thisusername;
     }
@@ -43,18 +41,15 @@ public class Authentication{
     /**
      * This method is used to handle event when the user click on login button.
      * @param event This is the actionevent name indicate clicking action.
-     * @return Nothing.
      * @exception Exception on file not found.
      * @see Exception
-     * @return Nothing.
      */
     public void Login(ActionEvent event) throws Exception {
         // Initialize connection with Database
         System.out.println("Trying to connect to mongo");
         try {
             //Online host URL
-            MongoClientURI uri = new MongoClientURI(
-                    "mongodb+srv://userdataaccess:user@cluster0-7hpzc.mongodb.net/test:27017?retryWrites=true&w=majority/userdatabase");
+            MongoClientURI uri = new MongoClientURI("mongodb+srv://userdataaccess:user@cluster0-7hpzc.mongodb.net/test:27017?retryWrites=true&w=majority");
             //Online host
             MongoClient mongoClient = new MongoClient(uri);
             // Localhost
@@ -62,9 +57,6 @@ public class Authentication{
             DB db = mongoClient.getDB("userdatabase");
             DBCollection userlist = db.getCollection("userlist");
             System.out.println("Connected to Database");
-
-
-
         System.out.println("Server is ready to check for ID");
         System.out.println("Checking for ID");
         //#Authentication Main: Check for ID and PASSWORD
@@ -103,10 +95,10 @@ public class Authentication{
     /**
      * This method is used to handle event when the user click on Register button.
      * @param event This is the actionevent name indicate clicking action.
-     * @return Nothing.
+     
      * @exception Exception on file not found.
      * @see Exception
-     * @return Nothing.
+     
      */
     public void Register(ActionEvent event) throws Exception
     {

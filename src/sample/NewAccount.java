@@ -36,7 +36,6 @@ public class NewAccount {
      * This method is used to handle event when the user click on register button.
      * Create new user account by inserting new user's userid and password to userdatabase.
      * @param event This is the actionevent name indicate clicking action.
-     * @return Nothing.
      * @exception Exception on file not found.
      * @see Exception
      */
@@ -49,19 +48,16 @@ public class NewAccount {
                     "mongodb+srv://generalaccess:user@cluster0-7hpzc.mongodb.net/test:27017?retryWrites=true&w=majority");
             //Online host
             MongoClient mongoClient = new MongoClient(uri);
-
             // Localhost
             // MongoClient mongoClient = new MongoClient("localhost", 27017);
             DB db = mongoClient.getDB("userdatabase");
             DBCollection userlist = db.getCollection("userlist");
             System.out.println("Connected to Database");
             System.out.println("Server is ready");
-
             //Fetching new user information
             BasicDBObject user = new BasicDBObject();
             //Push into database
             user.put("userid", textfield_userid.getText());
-
             DBCursor found = userlist.find(user);
             if (found.hasNext())
             {
@@ -81,21 +77,13 @@ public class NewAccount {
                     secondaryStage.setTitle("Delta Messenger");
                     secondaryStage.setScene(new Scene(MainStage, 400, 200));
                     secondaryStage.show();
-
                     //else
                 } else status.setText("ERROR: Your password is not matches");
             }
-
         }
         catch (Exception e) {
             System.out.println("exception occured");
             System.out.println(e);
         }
-
-
-
-
-
-
     }
 }

@@ -41,7 +41,6 @@ public class EditUserProfile implements Initializable {
      * This method is used to initialize this class with loadData() method.
      * @param url Unused.
      * @param rb Unused.
-     * @return Nothing.
      */
     public void initialize(URL url, ResourceBundle rb) {
         try {
@@ -52,7 +51,6 @@ public class EditUserProfile implements Initializable {
     }
     /**
      * This method is used to load initial user's data, UI elements into the main UI .
-     * @return Nothing.
      */
     private void loadData() throws IOException {
 
@@ -70,7 +68,6 @@ public class EditUserProfile implements Initializable {
      * This method is used to handle event when the user click on save button.
      * Save user's new information by updating database.
      * @param event This is the actionevent name indicate clicking action.
-     * @return Nothing.
      * @exception Exception on file not found.
      * @see Exception
      */
@@ -108,7 +105,6 @@ public class EditUserProfile implements Initializable {
      * This method is used to handle event when the user click on reset button.
      * Reset the user input to previous state.
      * @param event This is the actionevent name indicate clicking action.
-     * @return Nothing.
      * @exception Exception on file not found.
      * @see Exception
      */

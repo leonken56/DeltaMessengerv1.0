@@ -74,9 +74,8 @@ public class Controller implements Initializable{
      * @param thisuserdob This get the user date of birth.
      * @param thisuseremail This get the user email.
      * @param thisuserphone This get the user phone number.
-     * @return Nothing.
+     
      */
-
     public static void setCurrentUser(String thisuserid, String thisusername, String thisuserdob, String thisuseremail, String thisuserphone)
     {
         Controller.thisUserid= thisuserid;
@@ -90,7 +89,7 @@ public class Controller implements Initializable{
      * This method is used to initialize this class with loadData() method.
      * @param url Unused.
      * @param rb Unused.
-     * @return Nothing.
+     
      */
     public void initialize(URL url, ResourceBundle rb)
     {
@@ -103,7 +102,6 @@ public class Controller implements Initializable{
     }
     /**
      * This method is used to load initial data, UI elements into the main UI .
-     * @return Nothing.
      */
     private void loadData() throws IOException{
 
@@ -115,11 +113,8 @@ public class Controller implements Initializable{
         String e="Gaming";
         String g="Sport";
         String h="Funnymeme";
-
         list.addAll(a,b,c,d,e,g,h);
         listView.getItems().addAll(list);
-
-
         //SELECT ONLINE USER
         String onlineuser=Authentication.getUsername();
         list_onlineusers.getItems().add(onlineuser);
@@ -135,7 +130,6 @@ public class Controller implements Initializable{
                 secondaryStage.setTitle(selectedItem+"'s Profile");
                 secondaryStage.setScene(new Scene(MainStage, 622, 420));
                 secondaryStage.show();
-
                 //Debug show status:
 //                String message = "Shows user profile";
 //                textarea_outputmessage.appendText(message + "\n");
@@ -144,13 +138,6 @@ public class Controller implements Initializable{
                 io2.printStackTrace();
             }
         });
-
-
-
-
-
-
-
         //SELECT CHANNEL
         listView.getSelectionModel().selectedItemProperty().addListener((ObservableValue<? extends String> ov, String old_val, String new_val) -> {
             try {
@@ -178,7 +165,6 @@ public class Controller implements Initializable{
                     String buffertext = input.nextLine();
                     textarea_outputmessage.appendText(buffertext + "\n");
                 }
-
                 //Debug show status:
 //                String message = "Changed channel successfully";
 //                textarea_outputmessage.appendText(message + "\n");
@@ -187,9 +173,6 @@ public class Controller implements Initializable{
                 t.printStackTrace();
             }
         });
-
-
-
         //ENTER TO SUBMIT MESSAGE
         EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e)
@@ -234,9 +217,9 @@ public class Controller implements Initializable{
         textfield_usermessage.setOnAction(event);
     }
     /**
-     * This method is used to handle event when the user click on menu > user profile.
+     * This method is used to handle event when the user click on menu, user profile.
      * @param evt This is the actionevent name indicate clicking action.
-     * @return Nothing.
+     
      * @exception Exception on file not found.
      * @see Exception
      */
@@ -258,9 +241,9 @@ public class Controller implements Initializable{
         }
     }
     /**
-     * This method is used to handle event when the user click on menu > LogOut.
+     * This method is used to handle event when the user click on menu,LogOut.
      * @param evt This is the actionevent name indicate clicking action.
-     * @return Nothing.
+     
      * @exception Exception on file not found.
      * @see Exception
      */
@@ -275,8 +258,6 @@ public class Controller implements Initializable{
             secondaryStage.setScene(new Scene(MainStage, 400, 200));
             secondaryStage.show();
             // close this windows
-
-
             //Debug show status:
 //                String message = "Edit user profile";
 //                textarea_outputmessage.appendText(message + "\n");
@@ -288,7 +269,7 @@ public class Controller implements Initializable{
     /**
      * This method is used to handle event when the user click on send message.
      * @param evt This is the actionevent name indicate clicking action.
-     * @return Nothing.
+     
      * @exception IOException on file writer/reader.
      * @see IOException
      */
@@ -310,7 +291,6 @@ public class Controller implements Initializable{
             url = getClass().getResource("Channel6.txt");
         else if (selectedItem == "Funnymeme")
             url = getClass().getResource("Channel7.txt");
-
         Scanner input = new Scanner(new File(url.getPath()));
         File file = new File(url.getPath());
         FileWriter fr = new FileWriter(file, true);
